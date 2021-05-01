@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  background-color: gray;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-family: Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  height: 60px;
+  width: 100%;
+  background-color: #292727;
+}
+.navbar * {
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  float: left;
+  width: 80px;
+  margin: 20px;
+  color: white;
+  background-color: #292727;
+  border-radius: 100px;
+}
+.navbar__logo {
+  margin-top: 10px;
+}
+.navbar *:not(.navbar__logo, .navbar__togglebutton, .navbar__togglebutton__bar):hover {
+  background-color: #29e26d;
+  color: #292727;
+}
+.navbar__togglebutton {
+  position: absolute;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+.navbar__togglebutton__bar {
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  margin: 2px;
+}
+
+@media (max-width: 604px) {
+  .navbar__togglebutton {
+    display: block;
+  }
+
+  .navbar__home, .navbar__about, .navbar__help, .navbar__contact {
+    display: none;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: center;
+  }
+  .navbar__logo {
+    align-self: flex-start;
+  }
+}
+@media screen and (min-width: 605px) {
+  .navbar__home, .navbar__about, .navbar__help, .navbar__contact {
+    display: block !important;
+  }
+}
+.container {
+  background-color: linear-gradient(#2f96a3, #303e8f);
+  height: 80%;
+}
+
+.footer {
+  clear: both;
+  height: 50px;
+  width: 100%;
+  background-color: #29e26d;
+  position: absolute;
+  bottom: 0;
+}
+
+/*# sourceMappingURL=styles.css.map */

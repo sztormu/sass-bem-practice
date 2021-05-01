@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sass Website & BEM</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="navbar">
+        <h2 class="navbar__logo">Logo</h2>
+        <a href='#' class="navbar__togglebutton">
+            <span class="navbar__togglebutton__bar"></span>
+            <span class="navbar__togglebutton__bar"></span>
+            <span class="navbar__togglebutton__bar"></span>
+        </a>
+        <a id='link1' href='#' class="navbar__home">home</a>
+        <a id='link2' href='#' class="navbar__about">about</a>
+        <a id='link3' href='#' class="navbar__help">help</a>
+        <a id='link4' href='#' class="navbar__contact">contact</a>
+    </div>
+
+    <div class="container">
+        container
+    </div>
+
+    <div class="footer">
+        footer
+    </div>
+
+    <script>
+        const button = document.getElementsByClassName('navbar__togglebutton')[0]
+        const links = [document.getElementById('link1'), document.getElementById('link2'), document.getElementById('link3'), document.getElementById('link4')]
+        button.addEventListener('click', () => {
+            for (let i = 0; i < links.length; i++) {
+                if (links[i].style.display == "block") {
+                    links[i].style.display = "none"
+                }
+                else {
+                    links[i].style.display = "block"
+                }
+            }
+        })
+
+
+    </script>
+
+</body>
+
+</html>
