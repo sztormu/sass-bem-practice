@@ -1,7 +1,10 @@
+.footer__text, .container__text, .navbar * {
+  color: white;
+}
+
 * {
   margin: 0;
   padding: 0;
-  background-color: gray;
 }
 
 body {
@@ -9,9 +12,11 @@ body {
   flex-direction: column;
   height: 100%;
   font-family: Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+  background: linear-gradient(#2f96a3, #303e8f);
 }
 
 .navbar {
+  z-index: 1;
   display: flex;
   height: 60px;
   width: 100%;
@@ -24,7 +29,6 @@ body {
   float: left;
   width: 80px;
   margin: 20px;
-  color: white;
   background-color: #292727;
   border-radius: 100px;
 }
@@ -77,16 +81,35 @@ body {
 }
 .container {
   background-color: linear-gradient(#2f96a3, #303e8f);
-  height: 80%;
+  min-height: calc(100vh - 70px);
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+.container__image {
+  z-index: 0;
+  max-width: 70%;
+  height: auto;
+  width: auto\9 ;
+  /* ie8 */
+}
+.container__image--center {
+  display: block;
+  margin: 0 auto;
+}
+.container__text * {
+  padding: 10px;
 }
 
 .footer {
-  clear: both;
   height: 50px;
   width: 100%;
-  background-color: #29e26d;
-  position: absolute;
-  bottom: 0;
+  background-color: #292727;
+  position: sticky;
+}
+.footer__text {
+  text-align: center;
+  padding: 10px;
 }
 
 /*# sourceMappingURL=styles.css.map */

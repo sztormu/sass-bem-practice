@@ -1,11 +1,16 @@
-$primary-background: linear-gradient(rgb(47,150,163),rgb(48,62,143));
+$primary-background: linear-gradient(#2f96a3,#303e8f);
 $primary-color: #29e26d;
+$secondary-color: rgb(41, 39, 39);;
 $primary-fontfamily: Optima,Segoe,Segoe UI,Candara,Calibri,Arial,sans-serif; 
+
+%white-text{
+    color: white;
+}
 
 *{
     margin: 0;
     padding: 0;
-    background-color: gray;
+    
 
 }
 
@@ -14,23 +19,25 @@ body{
     flex-direction: column;
     height: 100%;
     font-family: $primary-fontfamily;
+    background: $primary-background;
 }
 
 .navbar{
+    z-index: 1;
     display: flex;
     height: 60px;
     width: 100%;
-    background-color: rgb(41, 39, 39);
+    background-color: $secondary-color;
     
     *{
+        @extend %white-text;
         font-weight: bold;
         text-align: center;
         text-decoration: none;
         float: left;
         width: 80px;
         margin: 20px;
-        color:white;
-        background-color: rgb(41, 39, 39);
+        background-color: $secondary-color;
         border-radius: 100px;
     }
     &__logo{
@@ -39,7 +46,7 @@ body{
 
     *:not(.navbar__logo,.navbar__togglebutton,.navbar__togglebutton__bar):hover{
         background-color: $primary-color;
-        color: rgb(41, 39, 39);
+        color: $secondary-color;
     }
 
     &__togglebutton{
@@ -95,15 +102,45 @@ body{
 
 .container{
     background-color: $primary-background;
-    height: 80%;
+    min-height: calc(100vh - 70px);
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+
+    &__image{
+        z-index: 0;
+        max-width: 70%;
+        height: auto;
+        width: auto\9; /* ie8 */
+
+        &--center{
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    &__text{
+        @extend %white-text;
+        *{
+            padding: 10px;
+        }
+        
+    }
+
 }
 
+
+
 .footer{
-    clear: both;
     height: 50px;
     width: 100%;
-    background-color: $primary-color;
-    position: absolute;
-    bottom: 0
+    background-color: $secondary-color;
+    position: sticky;
+
+    &__text {
+        @extend %white-text;
+        text-align: center;
+        padding: 10px;
+    }
 }
 
